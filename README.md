@@ -21,7 +21,7 @@ This is very much still in development, although already quite usable.
 
 # Example
 
-See `examples_test.go`.
+See `app_test.go`.
 
 # License
 
