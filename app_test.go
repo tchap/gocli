@@ -33,24 +33,28 @@ func ExampleApp() {
 	// Register the command with the parent command. Also suitable for init().
 	app.MustRegisterSubcommand(subcmd)
 
-	// Run the whole thing.
-	//
-	// app.Run([]string{}) would lead into:
-	//
-	// APPLICATION:
-	//   app - my bloody gocli app
-    //
-	// VERSION:
-	//   1.2.3
-    //
-	// OPTIONS:
-	//   -h=false: print help and exit
-	//
-	// DESCRIPTION:
-	//   This is a long description of my super uber cool app.
-    //
-	// SUBCOMMANDS:
-	//   subcmd	 - some kind of subcommand, you name it
+	/*
+	Run the whole thing.
+		
+	app.Run([]string{}) would lead into:
+
+	APPLICATION:
+	  app - my bloody gocli app
+
+	VERSION:
+	  1.2.3
+
+	OPTIONS:
+	  -h=false: print help and exit
+
+	DESCRIPTION:
+	  This is a long description of my super uber cool app.
+
+	SUBCOMMANDS:
+	  subcmd	 - some kind of subcommand, you name it
+
+	, app.Run([]string{"subcmd", "-h"}) into something similar.
+	*/
 
 	app.Run([]string{"subcmd"})
 	app.Run([]string{"subcmd", "-v"})
