@@ -1,5 +1,8 @@
 # About gocli
 
+[![Build
+Status](https://drone.io/github.com/tchap/gocli/status.png)](https://drone.io/github.com/tchap/gocli/latest)
+
 gocli is yet another package to aid with parsing command line arguments.
 
 Unlike many other libraries, it focuses mainly on the support of subcommands.
