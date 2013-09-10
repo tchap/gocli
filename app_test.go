@@ -6,7 +6,7 @@ import (
 
 // Examples -------------------------------------------------------------------
 
-func ExampleGocliApp() {
+func ExampleApp() {
 	// Create the root App object.
 	app := NewApp("myapp")
 	app.Short = "my bloody gocli app"
