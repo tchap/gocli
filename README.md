@@ -15,6 +15,10 @@ This is very much still in development, although already quite usable.
 
 [GoDoc](http://godoc.org/github.com/tchap/gocli)
 
+# Example
+
+See the examples directory.
+
 # License
 
 MIT

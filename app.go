@@ -50,17 +50,17 @@ func NewApp(name string) *App {
 
 // Default App help template.
 var AppHelpTemplate = `APPLICATION:
-    {{.Name}}{{with .Short}} - {{.}}{{end}}
+  {{.Name}}{{with .Short}} - {{.}}{{end}}
 
 {{with .Version}}VERSION:
-    {{.}}{{end}}
+  {{.}}{{end}}
 {{with .UsageLine}}USAGE:
-    {{.}}{{end}}
+  {{.}}{{end}}
 OPTIONS:
-  {{.DefaultFlagsString}}
+{{.DefaultFlagsString}}
 {{with .Long}}DESCRIPTION:{{.}}{{end}}
 
 {{with .Subcmds}}SUBCOMMANDS:
-    {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
-    {{end}}
+  {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
+  {{end}}
 {{end}}`

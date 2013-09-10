@@ -65,17 +65,19 @@ func (cmd *Command) Name() string {
 
 // Default Command help template.
 var CommandHelpTemplate = `COMMAND:
-    {{.Name}} - {{.Short}}
+  {{.Name}} - {{.Short}}
 
 USAGE:
-    {{.UsageLine}}
+  {{.UsageLine}}
 
 OPTIONS:
-  {{.DefaultFlagsString}}
-{{with .Long}}DESCRIPTION:{{.}}{{end}}
+{{.DefaultFlagsString}}
+{{with .Long}}DESCRIPTION:
+  {{.}}{{end}}
+
 {{with .Subcmds}}SUBCOMMANDS:
-    {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
-    {{end}}
+  {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
+  {{end}}
 {{end}}`
 
 // Print help and exit.
