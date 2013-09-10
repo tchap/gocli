@@ -2,10 +2,11 @@
 
 gocli is yet another package to aid with parsing command line arguments.
 
-Unlike many other libraries, it focuses purely on the support of subcommands.
-The rest, mainly the command flags, is handled by recursive chaining of FlagSets.
+Unlike many other libraries, it focuses mainly on the support of subcommands.
+Define as many subcommands as you want, the are handled by using FlagSets
+recursively. Simple yet powerful enough for many scenarios.
 
-The help output format is influenced by codegangsta's cli library.
+The help output format is inspired among others by codegangsta's cli library.
 
 # Status
 
@@ -17,7 +18,7 @@ This is very much still in development, although already quite usable.
 
 # Example
 
-See the examples directory.
+See `examples_test.go`.
 
 # License
 
