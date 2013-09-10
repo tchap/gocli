@@ -22,7 +22,7 @@
 */
 
 /*
-gocli package is yet another package to aid with parsing command line arguments.
+gocli is yet another package to aid with parsing command line arguments.
 
 Unlike many other libraries, it focuses purely on the support of subcommands.
 The rest, mainly the command flags, is handled by recursive chaining of FlagSets.
