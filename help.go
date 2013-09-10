@@ -39,7 +39,7 @@ func (hv *helpValue) IsBoolFlag() bool {
 	return true
 }
 
-// Helper function that just wraps a call to Usage.
+// Helper action that just wraps a call to Usage.
 func HelpAction(cmd *Command, args []string) {
 	cmd.Usage()
 }

@@ -11,6 +11,10 @@ The help output format is influenced by codegangsta's cli library.
 
 This is very much still in development, although already quite usable.
 
+# Documentation
+
+[GoDoc](http://godoc.org/github.com/tchap/gocli)
+
 # License
 
 MIT
