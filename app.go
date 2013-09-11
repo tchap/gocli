@@ -40,8 +40,8 @@ func NewApp(name string) *App {
 			Action: HelpAction,
 		},
 	}
-	app.Command.usageTemplate = AppHelpTemplate
-	app.Command.usageTemplateData = app
+	app.Command.helpTemplate = AppHelpTemplate
+	app.Command.helpTemplateData = app
 
 	app.Command.Flags.Var((*helpValue)(app.Command), "h", "print help and exit")
 

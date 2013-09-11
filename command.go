@@ -50,8 +50,8 @@ type Command struct {
 	Subcmds []*Command
 
 	// Internal field set according to the command type.
-	usageTemplate     string
-	usageTemplateData interface{}
+	helpTemplate     string
+	helpTemplateData interface{}
 }
 
 // Get name from the usage line. The name is the first word on the usage line.
@@ -82,8 +82,8 @@ OPTIONS:
 
 // Print help and exit.
 func (cmd *Command) Usage() {
-	t := template.Must(template.New("usage").Parse(cmd.usageTemplate))
-	t.Execute(os.Stderr, cmd.usageTemplateData)
+	t := template.Must(template.New("usage").Parse(cmd.helpTemplate))
+	t.Execute(os.Stderr, cmd.helpTemplateData)
 	os.Exit(1)
 }
 
@@ -138,8 +138,8 @@ func (cmd *Command) MustRegisterSubcommand(subcmd *Command) {
 	}
 
 	// Fill in the unexported fields.
-	subcmd.usageTemplate = CommandHelpTemplate
-	subcmd.usageTemplateData = subcmd
+	subcmd.helpTemplate = CommandHelpTemplate
+	subcmd.helpTemplateData = subcmd
 
 	// Define the help flag.
 	subcmd.Flags.Var((*helpValue)(subcmd), "h", "print help and exit")
