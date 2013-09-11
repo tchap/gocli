@@ -37,7 +37,7 @@ func NewApp(name string) *App {
 	app := &App{
 		Name: name,
 		Command: &Command{
-			Action: HelpAction,
+			Action: helpAction(1),
 		},
 	}
 	app.Command.helpTemplate = AppHelpTemplate

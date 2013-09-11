@@ -23,6 +23,10 @@
 
 package gocli
 
+import (
+	"os"
+)
+
 // Implement flag.Value interface for Command.
 type helpValue Command
 
@@ -32,14 +36,19 @@ func (hv *helpValue) String() string {
 
 func (hv *helpValue) Set(v string) error {
 	((*Command)(hv)).Usage()
+	os.Exit(0)
 	return nil
 }
 
+// FIXME: Not sure how this works, is it even necessary?
 func (hv *helpValue) IsBoolFlag() bool {
 	return true
 }
 
 // Helper action that just wraps a call to Usage.
-func HelpAction(cmd *Command, args []string) {
-	cmd.Usage()
+func helpAction(exitCode int) func(*Command, []string) {
+	return func(cmd *Command, args []string) {
+		cmd.Usage()
+		os.Exit(exitCode)
+	}
 }

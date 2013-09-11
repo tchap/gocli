@@ -84,7 +84,6 @@ OPTIONS:
 func (cmd *Command) Usage() {
 	t := template.Must(template.New("usage").Parse(cmd.helpTemplate))
 	t.Execute(os.Stderr, cmd.helpTemplateData)
-	os.Exit(1)
 }
 
 // Returns the same as flag.FlagSet.PrintDefaults, but as a string instead
@@ -132,14 +131,14 @@ func (cmd *Command) MustRegisterSubcommand(subcmd *Command) {
 		panic("UsageLine not set")
 	}
 
-	// Print help if there is no action defined.
-	if subcmd.Action == nil {
-		subcmd.Action = HelpAction
-	}
-
 	// Fill in the unexported fields.
 	subcmd.helpTemplate = CommandHelpTemplate
 	subcmd.helpTemplateData = subcmd
+
+	// Print help if there is no action defined.
+	if subcmd.Action == nil {
+		subcmd.Action = helpAction(1)
+	}
 
 	// Define the help flag.
 	subcmd.Flags.Var((*helpValue)(subcmd), "h", "print help and exit")
