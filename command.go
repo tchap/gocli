@@ -125,7 +125,7 @@ func (cmd *Command) MustRegisterSubcommand(subcmd *Command) {
 	// Require some fields to be non-empty.
 	switch {
 	case subcmd.Short == "":
-		panic(fmt.Sprintf("Short not set for %s", subcmd.Name()))
+		panic("Short not set")
 	case subcmd.UsageLine == "":
 		panic("UsageLine not set")
 	}
