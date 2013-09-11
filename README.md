@@ -5,7 +5,7 @@ Status](https://drone.io/github.com/tchap/gocli/status.png)](https://drone.io/gi
 
 gocli is yet another package to aid with parsing command line arguments.
 
-Unlike many other libraries, it focuses mainly on the support of subcommands.
+Unlike many other libraries, it focuses mainly on support of subcommands.
 Define as many subcommands as you want, they are handled by using FlagSets
 recursively. Simple yet powerful enough for many scenarios.
 
