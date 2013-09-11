@@ -72,9 +72,7 @@ USAGE:
 
 OPTIONS:
 {{.DefaultFlagsString}}
-{{with .Long}}DESCRIPTION:
-  {{.}}{{end}}
-
+{{with .Long}}DESCRIPTION:{{.}}{{end}}
 {{with .Subcmds}}SUBCOMMANDS:
   {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
   {{end}}
