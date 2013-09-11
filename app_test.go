@@ -22,7 +22,7 @@ func ExampleApp() {
 		UsageLine: "subcmd [-v]",
 		Short:     "some kind of subcommand, you name it",
 		Long:      "Brb, too tired to write long descriptions.",
-		Action:    func(cmd *Command, args []string) {
+		Action: func(cmd *Command, args []string) {
 			fmt.Printf("verbose mode set to %t\n", verbose)
 		},
 	}
@@ -34,26 +34,26 @@ func ExampleApp() {
 	app.MustRegisterSubcommand(subcmd)
 
 	/*
-	Run the whole thing.
-		
-	app.Run([]string{}) would lead into:
+		Run the whole thing.
 
-	APPLICATION:
-	  app - my bloody gocli app
+		app.Run([]string{}) would lead into:
 
-	VERSION:
-	  1.2.3
+		APPLICATION:
+		  app - my bloody gocli app
 
-	OPTIONS:
-	  -h=false: print help and exit
+		VERSION:
+		  1.2.3
 
-	DESCRIPTION:
-	  This is a long description of my super uber cool app.
+		OPTIONS:
+		  -h=false: print help and exit
 
-	SUBCOMMANDS:
-	  subcmd	 - some kind of subcommand, you name it
+		DESCRIPTION:
+		  This is a long description of my super uber cool app.
 
-	, app.Run([]string{"subcmd", "-h"}) into something similar.
+		SUBCOMMANDS:
+		  subcmd	 - some kind of subcommand, you name it
+
+		, app.Run([]string{"subcmd", "-h"}) into something similar.
 	*/
 
 	app.Run([]string{"subcmd"})
