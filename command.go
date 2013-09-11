@@ -81,6 +81,7 @@ OPTIONS:
 // Print help and exit.
 func (cmd *Command) Usage() {
 	t := template.Must(template.New("usage").Parse(cmd.helpTemplate))
+	cmd.UsageLine = strings.TrimSpace(cmd.UsageLine)
 	t.Execute(os.Stderr, cmd.helpTemplateData)
 }
 
