@@ -29,6 +29,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"text/tabwriter"
 	"text/template"
 )
 
@@ -80,9 +81,13 @@ OPTIONS:
 
 // Print help and exit.
 func (cmd *Command) Usage() {
-	t := template.Must(template.New("usage").Parse(cmd.helpTemplate))
 	cmd.UsageLine = strings.TrimSpace(cmd.UsageLine)
-	t.Execute(os.Stderr, cmd.helpTemplateData)
+
+	tw := tabwriter.NewWriter(os.Stderr, 0, 8, 2, '\t', 0)
+	defer tw.Flush()
+
+	t := template.Must(template.New("usage").Parse(cmd.helpTemplate))
+	t.Execute(tw, cmd.helpTemplateData)
 }
 
 // Returns the same as flag.FlagSet.PrintDefaults, but as a string instead
