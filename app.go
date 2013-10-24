@@ -54,8 +54,10 @@ var AppHelpTemplate = `APPLICATION:
 
 {{with .Version}}VERSION:
   {{.}}{{end}}
+
 {{with .UsageLine}}USAGE:
   {{.}}{{end}}
+
 OPTIONS:
 {{.DefaultFlagsString}}
 {{with .Long}}DESCRIPTION:{{.}}{{end}}
