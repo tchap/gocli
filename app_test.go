@@ -51,7 +51,7 @@ func ExampleApp() {
 		  This is a long description of my super uber cool app.
 
 		SUBCOMMANDS:
-		  subcmd	 - some kind of subcommand, you name it
+		  subcmd	 some kind of subcommand, you name it
 
 		, app.Run([]string{"subcmd", "-h"}) into something similar.
 	*/

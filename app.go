@@ -63,6 +63,6 @@ OPTIONS:
 {{with .Long}}DESCRIPTION:{{.}}{{end}}
 
 {{with .Subcmds}}SUBCOMMANDS:
-  {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} - {{.}}{{end}}
+  {{range .}}{{.Name}}{{with .Short}}{{ "\t" }} {{.}}{{end}}
   {{end}}
 {{end}}`
