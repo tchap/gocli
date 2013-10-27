@@ -52,10 +52,10 @@ func NewApp(name string) *App {
 var AppHelpTemplate = `APPLICATION:
   {{.Name}}{{with .Short}} - {{.}}{{end}}
 
-{{with .Version}}VERSION:
+{{with .UsageLine}}USAGE:
   {{.}}{{end}}
 
-{{with .UsageLine}}USAGE:
+{{with .Version}}VERSION:
   {{.}}{{end}}
 
 OPTIONS:

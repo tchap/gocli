@@ -41,11 +41,11 @@ func ExampleApp() {
 		APPLICATION:
 		  app - my bloody gocli app
 
-		VERSION:
-		  1.2.3
-
 		OPTIONS:
 		  -h=false: print help and exit
+
+		VERSION:
+		  1.2.3
 
 		DESCRIPTION:
 		  This is a long description of my super uber cool app.
