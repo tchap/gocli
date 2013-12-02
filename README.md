@@ -26,3 +26,5 @@ See `app_test.go`.
 # License
 
 MIT
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tchap/gocli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
