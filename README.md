@@ -18,7 +18,7 @@ The API has been tagged with `v1.0.0`, please use `gopkg.in` to lock your depend
 # Usage #
 
 ```go
-import "gopkg.in/tchap/gocli.v1"
+import "gopkg.in/tchap/gocli.v2"
 ```
 
 # Documentation #
